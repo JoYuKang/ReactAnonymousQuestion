@@ -7,14 +7,13 @@ interface Config {
     projectId: string;
   };
 }
-
 export default class FirebaseAdmin {
   public static instance: FirebaseAdmin;
 
   private init = false;
 
   public static getInstance(): FirebaseAdmin {
-    if (FirebaseAdmin.instance === undefined || FirebaseAdmin.instance === null) {
+    if (!FirebaseAdmin.instance) {
       // 초기화 진행
       FirebaseAdmin.instance = new FirebaseAdmin();
       // TODO: 환경을 초기화
@@ -24,24 +23,27 @@ export default class FirebaseAdmin {
   }
 
   private bootstrap(): void {
-    const haveApp = admin.apps.length === 0;
-    if (haveApp) {
+    if (!!admin.apps.length === true) {
       this.init = true;
       return;
     }
     const config: Config = {
       credential: {
-        projectId: process.env.projectId || '',
-        clientEmail: process.env.clientEmail || '',
         privateKey: (process.env.privateKey || '').replace(/\\n/g, '\n'),
+        clientEmail: process.env.clientEmail || '',
+        projectId: process.env.projectId || '',
       },
     };
-    admin.initializeApp({ credential: admin.credential.cert(config.credential) });
-    console.log('이게 실행 된다');
+
+    admin.initializeApp({
+      databaseURL: config.databaseurl,
+      credential: admin.credential.cert(config.credential),
+    });
+    console.log('bootstrap end');
   }
 
   /** firestore 반환 */
-  public get Firebase(): FirebaseFirestore.Firestore {
+  public get Firestore(): FirebaseFirestore.Firestore {
     if (this.init === false) {
       this.bootstrap();
     }
