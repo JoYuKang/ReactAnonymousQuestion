@@ -7,6 +7,11 @@ import FirebaseClient from '@/models/firebase_client';
 
 const provider = new GoogleAuthProvider();
 
+console.log(process.env.publicApiKey); //YOU_API_KEY
+console.log(process.env.FIREBASE_AUTH_HOST); //undefind
+console.log(process.env.projectId); //projectId
+//console.log(process.env.privateKey); //projectId
+
 const IndexPage: NextPage = function () {
   return (
     <ServiceLayout title="test">
@@ -21,20 +26,9 @@ const IndexPage: NextPage = function () {
           onClick={() => {
             signInWithPopup(FirebaseClient.getInstance().Auth, provider)
               .then((result) => {
-                const credential = GoogleAuthProvider.credentialFromResult(result);
-                const token = credential.accessToken;
-
-                const { user } = result;
                 console.log(result.user);
               })
-              .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-
-                const { email } = error.customData;
-
-                const credential = GoogleAuthProvider.credentialFromError(error);
-              });
+              .catch((error) => {});
           }}
         />
       </Center>

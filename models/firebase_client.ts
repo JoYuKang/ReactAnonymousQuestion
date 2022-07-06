@@ -5,7 +5,7 @@ import getConfig from 'next/config';
 const { publicRuntimeConfig } = getConfig();
 
 const FirebaseCredentials = {
-  apiKey: publicRuntimeConfig.apiKey,
+  apiKey: publicRuntimeConfig.publicApiKey,
   authDomain: publicRuntimeConfig.authDomain,
   projectId: publicRuntimeConfig.projectId,
 };
