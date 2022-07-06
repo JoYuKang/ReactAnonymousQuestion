@@ -2213,6 +2213,11 @@ caniuse-lite@^1.0.30001202, caniuse-lite@^1.0.30001219, caniuse-lite@^1.0.300012
   resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001363.tgz"
   integrity sha512-HpQhpzTGGPVMnCjIomjt+jvyUu8vNFo3TaDiZ/RcoTrlOq/5+tC8zHdsbgFB6MxmaY+jCpsH09aD80Bb4Ow3Sg==
 
+chakra@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/chakra/-/chakra-0.0.3.tgz#a1c0f36c6ea6c1e934daac583fac7fd29c65ef23"
+  integrity sha512-KELGkVGvHQPdMcmUZLDTbiYoTsAuSjetq8zeUQm+YrF8mhLJAWNjZBPVkWSgrqH2ahRW1W3UEVzvTUGgFVbwlA==
+
 chalk@2.4.2, chalk@^2.0.0:
   version "2.4.2"
   resolved "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz"
@@ -3129,7 +3134,7 @@ find-up@^4.0.0:
 
 firebase-admin@^11.0.0:
   version "11.0.0"
-  resolved "https://registry.npmjs.org/firebase-admin/-/firebase-admin-11.0.0.tgz"
+  resolved "https://registry.yarnpkg.com/firebase-admin/-/firebase-admin-11.0.0.tgz#b10355cd9b142cf305fcb7842b51f918d3745a11"
   integrity sha512-x56u+Q1P8QDvQKaYRe29ZUM/3f829cP8tsKCDXOhaIX/GbGfgcdjRhPmCafzlwgCWP5wW9NkOgIhnrw94zucvw==
   dependencies:
     "@fastify/busboy" "^1.1.0"

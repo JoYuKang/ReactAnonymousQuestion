@@ -1,6 +1,10 @@
 import { Box, Button } from '@chakra-ui/react';
 
-export const GoogleLoginButton = function () {
+interface Props {
+  onClick: () => void;
+}
+
+export const GoogleLoginButton = function ({ onClick }: Props) {
   return (
     <Box>
       <Button
@@ -15,6 +19,7 @@ export const GoogleLoginButton = function () {
         leftIcon={
           <img src="/google.png" width="35" alt="google 로고" style={{ backgroundColor: 'white', padding: '8px' }} />
         }
+        onClick={onClick}
       >
         Goole 계정으로 시작하기
       </Button>

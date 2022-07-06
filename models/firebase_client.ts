@@ -4,7 +4,7 @@ import getConfig from 'next/config';
 
 const { publicRuntimeConfig } = getConfig();
 
-const firebaseCredentials = {
+const FirebaseCredentials = {
   apiKey: publicRuntimeConfig.apiKey,
   authDomain: publicRuntimeConfig.authDomain,
   projectId: publicRuntimeConfig.projectId,
@@ -19,10 +19,10 @@ export default class FirebaseClient {
     const apps = getApps();
     if (apps.length === 0) {
       console.info('firebase client init start');
-      initializeApp(firebaseCredentials);
+      initializeApp(FirebaseCredentials);
     }
-    this.auth = getAuth();
     console.info('firebase auth');
+    this.auth = getAuth();
   }
 
   public static getInstance(): FirebaseClient {
