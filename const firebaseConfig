@@ -1,9 +1,0 @@
-const firebaseConfig = {
-  apiKey: "AIzaSyCuDbv8QxW_o7Z-yOnlUfbYR9Uqx4K7cNo",
-  authDomain: "start-f8590.firebaseapp.com",
-  projectId: "start-f8590",
-  storageBucket: "start-f8590.appspot.com",
-  messagingSenderId: "715024972608",
-  appId: "1:715024972608:web:328b44f0cc12cfb2a558a5",
-  measurementId: "G-2K8MHB3FPX"
-};
