@@ -4,13 +4,14 @@ import { ServiceLayout } from '@/components/service_layout';
 import { GoogleLoginButton } from '@/components/google_login_button';
 import { useAuth } from '@/contexts/auth_user.context';
 
-console.log(process.env.publicApiKey); //YOU_API_KEY
-console.log(process.env.FIREBASE_AUTH_HOST); //undefind
-console.log(process.env.projectId); //projectId
+// console.log(process.env.publicApiKey); //YOU_API_KEY
+// console.log(process.env.FIREBASE_AUTH_HOST); //undefind
+// console.log(process.env.projectId); //projectId
 //console.log(process.env.privateKey); //projectId
 
 const IndexPage: NextPage = function () {
   const { signInWithGoogle } = useAuth();
+
   return (
     <ServiceLayout title="test">
       <Box maxW="md" mx="auto">
