@@ -1,17 +1,21 @@
+import { Box, BoxProps } from '@chakra-ui/react';
 import Head from 'next/head';
+import GNB from './GNB';
 
 interface Props {
   title: string;
   children: React.ReactNode;
 }
 
-export const ServiceLayout = function ({ title = 'blind', children }: { Props }) {
+export const ServiceLayout: React.FC<Props & BoxProps> = function ({ title = 'blind', children, ...boxProps }) {
   return (
-    <div>
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <Box {...boxProps}>
       <Head>
         <title>{title}</title>
       </Head>
+      <GNB />
       {children}
-    </div>
+    </Box>
   );
 };
